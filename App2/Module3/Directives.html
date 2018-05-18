@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html ng-app="FirstApp">
+
+    <head>
+        <title>Angular Tutorial</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />       
+    </head>
+
+    <body ng-controller="Cntrl">
+        <div class="container">
+            <input type="radio" name="truth" value="true" placeholder="true" ng-click="set('true')"/>True<br/>
+            <input type="radio" name="truth" value="false" placeholder="false" ng-click="set('false')"/>False
+        </div>
+        
+        <pre><h6> {{Main}}</h6></pre>
+        <div class="container">
+            <div ng-show="1==1">
+            Show this text using ng-show = true
+            </div>
+            <div ng-hide="1==1">
+            Hide this text using ng-hide = true
+            </div>
+        </div> 
+        <div class="container">
+            <div ng-show="Main">
+                Due to true below text is hidden<br>
+            Show this text using ng-show
+            </div>
+            <div ng-hide="Main">
+                Due to false above text is hidden<br>
+            Hide this text using ng-hide
+            </div>
+        </div> 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="module3.js"></script>
+    </body>
+</html>
