@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+
+    <head>
+        <title>Angular Tutorial</title>  
+        <link rel="stylesheet" href="StyleAndClass.css"/>
+        <link rel="stylesheet" href="StyleAndClass.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="ArrInAng.js"></script>
+        <style>
+            div{
+                border:1px solid black;
+                display: inline-block;
+            }
+        </style>
+    </head>
+
+    <body ng-controller="Cnt">
+        
+        <h2>Select your favourite car</h2>
+        <p>Array in default order</p>
+        <select>
+            <option ng-repeat="CarName in CarList" value="{{CarName.Name}}" ><div>{{CarName.Name}}</div><div>{{CarName.Roll}}</div></option>
+        </select>
+        <p>Array is filter by Aie</p>
+        <select>
+            <option ng-repeat="CarName in CarList| filter : filterVal " value="{{CarName.Name}}" >
+                <select>
+                    <option ng-repeat="CarName2 in CarList | orderBy:'Roll' " value="{{CarName2.Name}}" ></option>
+                </select>
+            </option>
+        </select>
+        <p>Array is order by roll</p>
+        <p>Array is order by roll in reverse</p>
+        <select>
+            <option ng-repeat="CarName in CarList | orderBy:'!Name' " value="{{CarName.Name}}" ><div>{{CarName.Name}}</div><div>{{CarName.Roll}}</div></option>
+        <p>Array is track by $even</p>
+        <select>
+            <option ng-repeat="CarName in CarList track by $even" value="{{CarName.Name}}" ><div>{{CarName.Name}}</div><div>{{CarName.Roll}}</div></option>
+        </select>
+        
+        
+        
+    </body>
+</html>
