@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="FirstApp">
+
+<head>
+    <title>Angular Tutorial</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+
+<body ng-controller="Cntrl">
+    <div class="container">
+        <h1>Start of the Application</h1>
+        <pre>{{appName}}</pre>
+        <pre>{{Name}}</pre>
+        <pre>{{Sur}}</pre>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script type="text/javascript">
+        var FirstApp = angular.module("FirstApp", []);
+        FirstApp.controller("Cntrl", ["$scope","Data",function($scope,Data) {
+            $scope.appName = Date(0);
+            $scope.Name = Data.Name;
+            $scope.Sur = Data.Surname;
+        }]);
+        FirstApp.constant("Data",{Name:"Lucky",Surname:"Agrawal"});
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <title>Tony's Pizza</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+</head>
+
+<body ng-controller="appCnt">
+	<input type="text" ng-model="val">
+	<input type="button" ng-click="my()" value="click2">
+	<input type="button" ng-click="my(val)" value="click">
+    <h2>{{name}}</h2>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<script src="app/app.js"></script>
+    <script src="app/ServiceInitial.js"></script>
+    <script src="app/ServiceUse.js"></script>
+</body>
+
+</html>

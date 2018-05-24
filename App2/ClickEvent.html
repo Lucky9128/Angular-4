@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="FirstApp">
+
+<head>
+    <title>Angular Tutorial</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+
+<body ng-controller="Cntrl">
+    <div class="container">
+        <h1>Start of the Application</h1>
+        <pre>{{appName}}</pre>
+        <div>
+        <input ng-model="Wish">
+        <a href="#" ng-click="rename(Wish)">dncjdncj</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script type="text/javascript">
+        var FirstApp = angular.module("FirstApp", []);
+        FirstApp.controller("Cntrl", ["$scope",function($scope) {
+            $scope.appName = "Lucky";
+            $scope.rename = function(Name){
+                $scope.appName = Name;
+            }
+        }]);
+    </script>
+</body>
+
+</html>
