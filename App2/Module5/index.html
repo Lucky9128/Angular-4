@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <title>Tony's Pizza - New User Registration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+</head>
+
+<body ng-controller="labController">
+    <div class="container">
+        <h1>New User Registration</h1>
+		<form class="form-horizontal" name="form" novalidate>
+			<div class="form-group">
+				<div class="col-md-2">
+					<label>Username</label>
+				</div>
+				<div class="col-md-5">
+					<input class="form-control" ng-model="model.username" type="text" name="username" required>
+					<div class="alert alert-danger" ng-show="(form.username.$touched||form.$submitted)&&form.username.$error.required">Username is required
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-2">
+					<label>Password</label>
+				</div>
+				<div class="col-md-5">
+					<input type="password" ng-model="model.password" class="form-control" name="password" required>
+					<div class="alert alert-danger" ng-show="(form.password.$touched||form.$submitted)&&form.password.$error.required">Password is required
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-2">
+					<label>Name</label>
+				</div>
+				<div class="col-md-5">
+					<input type="text" ng-model="model.name" name="Name" class="form-control" required>
+					<div class="alert alert-danger" ng-show="(form.Name.$touched||form.$submitted)&&form.Name.$error.required">Name is required
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-2">
+					<label>Phone Number</label>
+				</div>
+				<div class="col-md-5">
+					<input type="number" name="phone" ng-model="model.phone" class="form-control"  ng-required="!model.email">
+					<div class="alert alert-danger" ng-show="(form.phone.$touched || form.$submitted) && form.phone.$error.required">Phone is required
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-2">
+					<label>Email</label>
+				</div>
+				<div class="col-md-5">
+					<input type="email" ng-model="model.email" name="Email" class="form-control" ng-required="!model.phone" >
+					<div class="alert alert-danger" ng-show="(form.Email.$touched||form.$submitted)&&form.Email.$error.required">Email is required
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-2">
+					<label>Favorite Pizza</label>
+				</div>
+				<div class="col-md-5">
+					<select class="form-control" ng-model="model.favorite" name="FavoritePizza" ng-required="true">
+						<option>Cheese Pizza</option>
+						<option>Pepperoni Pizza</option>
+						<option>Margherita Pzza</option>
+						<option>BBQ Chicken Pzza</option>
+						<option>Combo Pzza</option>
+					</select>
+					<div class="alert alert-danger" ng-show="(form.FavoritePizza.$touched||form.$submitted)&&form.FavoritePizza.$error.required">Select a Pizza
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-5 offset-md-2">
+					<input type="submit" value="Submit" ng-click="submit(model)" class="btn btn-primary" ng-disabled="form.$invalid">
+					<button type="reset" class="btn btn-default" ng-click="reset()">Reset</button>
+				</div>
+			</div>
+		</form>
+		<pre>{{my|json}}</pre>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-resource.min.js"></script>
+	<script src="app/registrationService.js"></script>
+    <script src="./app/app.js"></script>
+    <script src="./app/labController.js"></script>
+</body>
+
+</html>

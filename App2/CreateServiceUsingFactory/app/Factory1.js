@@ -1,5 +1,4 @@
-var app2 = angular.module('app2',[])
-app2.factory('MyServ',function(){
+app.factory('MyServ',function(){
 	var obj ={};
 	obj.sum = function(v1,v2){
 		return v1+v2;
